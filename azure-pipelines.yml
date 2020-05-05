@@ -17,6 +17,8 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
+
+
 # ...
 # do this after other tasks such as building
 - task: DotNetCoreCLI@2
@@ -24,6 +26,10 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+
+#publish to artifactory
+- script: dotnet publish --output $(Build.ArtifactStagingDirectory)
+
 
 # ...Collect code coverage
 # do this after other tasks such as building
@@ -51,6 +57,5 @@ steps:
 # do this near the end of your pipeline in most cases
 - script: dotnet pack /p:PackageVersion=$(version)  
 
-#publish to artifactory
-- script: dotnet publish --output $(Build.ArtifactStagingDirectory)
+
 
