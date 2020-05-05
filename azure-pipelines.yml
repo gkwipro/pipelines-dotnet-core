@@ -52,7 +52,7 @@ steps:
 - script: dotnet pack /p:PackageVersion=$(version)  
 
 - task: NuGetAuthenticate@0
-  input:
+  inputs:
     nuGetServiceConnections: 'DotNET_Project_Nuget'
 - task: NuGetCommand@2
   inputs:
