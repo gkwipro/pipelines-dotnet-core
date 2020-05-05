@@ -57,6 +57,6 @@ steps:
   inputs:
     command: push
     nuGetFeedType: external
-    publishFeedCredentials: '<DotNET_Project_Nuget>'
+    publishFeedCredentials: 'DotNET_Project_Nuget'
     versioningScheme: byEnvVar
     versionEnvVar: version
