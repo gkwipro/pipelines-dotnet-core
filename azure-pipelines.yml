@@ -51,7 +51,6 @@ steps:
 # do this near the end of your pipeline in most cases
 - script: dotnet pack /p:PackageVersion=$(version)  
 
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'RapidOps'
+#publish to artifactory
+- script: dotnet publish --output $(Build.ArtifactStagingDirectory)
 
