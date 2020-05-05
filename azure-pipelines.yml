@@ -45,3 +45,18 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'DotNetWebApp'
+
+
+# ...
+# do this near the end of your pipeline in most cases
+- script: dotnet pack /p:PackageVersion=$(version)  # define version variable elsewhere in your pipeline
+- task: NuGetAuthenticate@0
+  input:
+    nuGetServiceConnections: 'DotNET_Project_Nuget'
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    nuGetFeedType: external
+    publishFeedCredentials: '<DotNET_Project_Nuget>'
+    versioningScheme: byEnvVar
+    versionEnvVar: version
