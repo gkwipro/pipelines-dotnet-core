@@ -53,5 +53,5 @@ steps:
 
 - task: NuGetAuthenticate@0
   inputs:
-    nuGetServiceConnections: 'DotNET_Project_Nuget'
+    nuGetServiceConnections: 'RapidOps'
 
