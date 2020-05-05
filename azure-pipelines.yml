@@ -54,10 +54,4 @@ steps:
 - task: NuGetAuthenticate@0
   inputs:
     nuGetServiceConnections: 'DotNET_Project_Nuget'
-- task: NuGetCommand@2
-  inputs:
-    command: push
-    nuGetFeedType: external
-    publishFeedCredentials: 'DotNET_Project_Nuget'
-    versioningScheme: byEnvVar
-    versionEnvVar: version
+
