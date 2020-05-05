@@ -53,11 +53,11 @@ steps:
 
 - task: NuGetAuthenticate@0
   inputs:
-    nuGetServiceConnections: 'krishnan'
+    nuGetServiceConnections: 'DotNET_Project_Nuget'
 - task: NuGetCommand@2
   inputs:
     command: push
     nuGetFeedType: external
-    publishFeedCredentials: 'krishnan'
+    publishFeedCredentials: 'DotNET_Project_Nuget'
     versioningScheme: off
     versionEnvVar: version
