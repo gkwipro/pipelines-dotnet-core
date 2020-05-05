@@ -53,7 +53,7 @@ steps:
 
 - task: NuGetAuthenticate@0
   inputs:
-    nuGetServiceConnections: 'DotNET_Project_Nuget'
+    nuGetServiceConnections: 'krishnan'
 - task: NuGetCommand@2
   inputs:
     command: push
